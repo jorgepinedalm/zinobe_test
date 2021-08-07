@@ -1,1 +1,3 @@
-{{loans | async}}
+<div *ngFor="let loan of loans$ | async">
+    {{loan | json}}
+</div>

@@ -29,6 +29,7 @@ export class LoansComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         console.log('The dialog was closed', result);
+        //result.id = uuid();
         this.store.dispatch(new AddLoan(result));
       }
       

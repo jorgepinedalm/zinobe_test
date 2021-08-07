@@ -10,6 +10,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -17,6 +18,7 @@ import { NgxsModule } from '@ngxs/store';
 import { environment } from 'src/environments/environment';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { LoansState } from '../models/loan/loan.state';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
     FormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    NgxsModule.forRoot([],
+    MatTableModule,
+    NgxsModule.forRoot([LoansState],
       { developmentMode: !environment.production }
     ),
     NgxsReduxDevtoolsPluginModule.forRoot({

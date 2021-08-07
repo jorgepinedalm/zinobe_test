@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { AddLoan } from './loan.actions';
 import { LoanStateModel } from './loan.model';
@@ -8,6 +9,7 @@ import { LoanStateModel } from './loan.model';
     loans: []
   }
 })
+@Injectable()
 export class LoansState {
   @Selector()
   static getLoans(state: LoanStateModel) { return state.loans; }
