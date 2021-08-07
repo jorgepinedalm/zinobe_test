@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Loan } from 'src/app/models/loan/loan';
 
 @Component({
   selector: 'app-loan-request',
@@ -7,13 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoanRequestComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<LoanRequestComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Loan) { }
 
   ngOnInit(): void {
   }
 
-  openModal():void{
-
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }

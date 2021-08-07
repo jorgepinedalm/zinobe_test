@@ -1,36 +1,17 @@
-
-<!-- Modal -->
-<div class="modal fade" id="newRequestModal" tabindex="-1" aria-labelledby="newRequestModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="newRequestModalLabel">Solicitar préstamo</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <form>
-            <div class="modal-body">
-                
-                <div class="mb-3">
-                    <label>Nombre</label>
-                    <input type="text" class="form-control" name="name" placeholder="Ingrese el nombre del usuario">
-                </div>
-                <div class="mb-3">
-                    <label>Email</label>
-                    <input type="email" class="form-control" name="email" placeholder="Ej : usuario@correo.com">
-                </div>
-                <div class="mb-3">
-                    <label>No. de identificación</label>
-                    <input type="text" class="form-control" name="ID" placeholder="Ingrese el no. de identificación">
-                </div>
-
-
-                
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Guardar</button>
-            </div>
-        </form>
-      </div>
-    </div>
-  </div>
+<h3 mat-dialog-title>Solicitud de préstamo</h3>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Valor</mat-label>
+    <input matInput [(ngModel)]="data.value">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="data.dateToPay">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Guardar</button>
+</div>
