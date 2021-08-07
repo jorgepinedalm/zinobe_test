@@ -1,0 +1,19 @@
+{
+    "loans" : [
+        {
+            "id": 1,
+            "dateToPay" : "2021-08-08",
+            "value" : 100000,
+            "state": true,
+            "isPaid" : false,
+            "userId" : 1
+        }
+    ],
+    "users" : [
+        {
+            "name" : "Jorge Pineda",
+            "email" : "jorge@gmail.com",
+            "ID" : "1082992123"
+        }
+    ]
+}
